@@ -1,5 +1,6 @@
-from flask import Flask
+from flask import Flask, request
 from textblob import TextBlob
+
 
 app = Flask("__name__")
 
@@ -11,5 +12,6 @@ def home():
 def felling(phrase):
     text_blob = TextBlob(phrase)
     return f"the phase polarization is: {text_blob.sentiment.polarity}"
+
 
 app.run(debug=True)
